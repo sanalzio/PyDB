@@ -1,6 +1,6 @@
 """# PyDB
 # A Simple Database Module"""
-__version__ = 1.6
+__version__ = 1.7
 __name__ = "pydb"
 
 class pydb:
@@ -24,7 +24,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         print(db.getData("key1"))
         ```
         ### Output:
@@ -68,7 +68,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         print(db.keys())
         ```
         ### Output:
@@ -93,7 +93,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         print(db.values())
         ```
         ### Output:
@@ -121,7 +121,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         print(db.items())
         ```
         ### Output:
@@ -149,7 +149,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         db.addData("key3", "holla")
         ```
         ### New file.db file:
@@ -185,7 +185,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         db.removeData("key3")
         ```
         ### New file.db file:
@@ -213,7 +213,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         db.clear()
         ```
         ### New file.db file:
@@ -234,7 +234,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         db.backUp("newFile.db")
         ```
         ### newFile.db file:
@@ -258,7 +258,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         db.setData("key2", "holla")
         ```
         ### newFile.db file:
@@ -286,7 +286,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         db.fileToDICT()
         ```
         ### Output:
@@ -311,7 +311,7 @@ class pydb:
         ### Python File:
         ```py
         import PyDB
-        db=PyDB.pylist("file.db")
+        db=PyDB.pydb("file.db")
         db.dictToFILE({'key1':'hello','key2','hallo'})
         ```
         ### file.db file:
@@ -531,6 +531,51 @@ class pylist:
         f= open(self.f, 'w', encoding="utf-8")
         f.write("")
         f.close()
+    def clear(self):
+        """
+        ## Example:
+        ### file.db file:
+        ```
+        hello
+        hallo
+        ```
+        ### Python File:
+        ```py
+        import PyDB
+        db=PyDB.pylist("file.db")
+        db.clear()
+        ```
+        ### New file.db file:
+        ```
+        (Empty)
+        ```
+        """
+        with open(self.file, 'w') as f:
+            f.write('')
+    def backUp(self, newfile:str):
+        """
+        ## Example:
+        ### file.db file:
+        ```
+        hello
+        hallo
+        ```
+        ### Python File:
+        ```py
+        import PyDB
+        db=PyDB.pylist("file.db")
+        db.backUp("newFile.db")
+        ```
+        ### newFile.db file:
+        ```
+        hello
+        hallo
+        ```
+        """
+        with open(self.file, 'r', encoding="utf-8") as f:
+            lines = f.readlines()
+            with open(newfile, 'w') as f:
+                f.writelines(lines)
     def lenFile(self):
         
         """
