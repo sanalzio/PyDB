@@ -9,6 +9,13 @@ A simple local file-based database module.
   ```
 - Now the module allows data with newline(\n) characters.
 - The listToTABLE and dictToTABLE functions have been redesigned from scratch.
+- Added index function to pylist class.
+  ```py
+  import PyDB
+  db=PyDB.pylist("Filename")
+  print(db.index("0120982109"))
+  print(db.index(0120982109))
+  ```
 
 # Dictionary
 ## import example:
