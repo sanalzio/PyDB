@@ -1,11 +1,20 @@
 # PyDB
 A simple local file-based database module.
 
+# Updates
+- Now, only .pydb file extensions are allowed.
+  ```py
+  import PyDB
+  db=PyDB.pydb("Filename")
+  ```
+- Now the module allows data with newline(\n) characters.
+- The listToTABLE and dictToTABLE functions have been redesigned from scratch.
+
 # Dictionary
 ## import example:
 ```py
 import PyDB
-db=PyDB.pydb("File.x")
+db=PyDB.pydb("Filename")
 ```
 
 ## add data
@@ -75,16 +84,16 @@ new file:
 (empty)
 
 ## backup data
-gist content:
+file content:
 ```
 var1:123
 var2:456
 ```
 code:
 ```py
-db.backUp("backup1.db")
+db.backUp("backup1")
 ```
-backup1.db file content:
+backup1.pydb file content:
 ```
 var1:123
 var2:456
@@ -107,7 +116,7 @@ var2:789
 ```
 
 ## Retrieve the data in dictionary format
-gist content:
+file content:
 ```
 var1:123
 var2:789
@@ -122,20 +131,20 @@ output:
 {'var1':'123', 'var2':'789'}
 ```
 
-## Dictionary to gist
+## Dictionary to file
 code:
 ```py
 mydict = {'var':'Hello', 'varint':123}
 db.dictToFile(mydict)
 ```
-new gist content:
+new file content:
 ```
 var:Hello
 varint:123
 ```
 
 ## Control data
-gist content:
+file content:
 ```
 var:Hello
 ```
@@ -151,7 +160,7 @@ False
 ```
 
 ## Get datas
-gist content:
+file content:
 ```
 var:Hello
 varint:123
@@ -243,16 +252,16 @@ new file:
 (empty)
 
 ## backup data
-gist content:
+file content:
 ```
 123
 456
 ```
 code:
 ```py
-db.backUp("backup1.db")
+db.backUp("backup1")
 ```
-backup1.db file content:
+backup1.pydb file content:
 ```
 123
 456
@@ -275,7 +284,7 @@ new content:
 ```
 
 ## Retrieve the data in list format
-gist content:
+file content:
 ```
 Hello
 123
@@ -290,13 +299,13 @@ output:
 ["Hello", "123"]
 ```
 
-## List to gist
+## List to file
 code:
 ```py
 mylist = ["Hello", "I'm fine thank you"]
 db.listToFile(mylist)
 ```
-new gist content:
+new file content:
 ```
 Hello
 I'm fine thank you
