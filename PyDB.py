@@ -1,6 +1,6 @@
 """# PyDB
 # A Simple Database Module"""
-__version__ = 1.7
+__version__ = 1.8
 __name__ = "pydb"
 
 class pydb:
