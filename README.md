@@ -16,6 +16,12 @@ A simple local file-based database module.
   print(db.index("0120982109"))
   print(db.index(0120982109))
   ```
+- Added lenFile function to pylist class.
+  ```py
+  import PyDB
+  db=PyDB.pylist("Filename")
+  print(db.lenFile())
+  ```
 
 # Dictionary
 ## import example:
