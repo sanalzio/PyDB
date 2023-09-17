@@ -636,7 +636,7 @@ class pylist:
                 op.append(a)
             return len(op)
     def index(self, value):
-        return self.listFile().index(value)
+        return self.listFile().index(str(value))
 
 
 def dictToTABLE(dictionary):
