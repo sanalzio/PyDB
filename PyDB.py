@@ -640,12 +640,12 @@ class pylist:
             if str(value) in self.listFile():
                 return self.listFile().index(str(value))
             else:
-                return None
+                return -1
         else:
             if value in self.listFile():
                 return self.listFile().index(value)
             else:
-                return None
+                return -1
 
 
 def dictToTABLE(dictionary):
