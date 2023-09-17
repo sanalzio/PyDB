@@ -637,9 +637,9 @@ class pylist:
             return len(op)
     def index(self, value):
         if not value==True or not value==False or not value==None:
-            return self.listFile().index(value)
-        else:
             return self.listFile().index(str(value))
+        else:
+            return self.listFile().index(value)
 
 
 def dictToTABLE(dictionary):
