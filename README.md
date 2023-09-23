@@ -1,4 +1,4 @@
-# PyDB
+# PyDB 1.8
 A simple local file-based database module.
 
 # Updates
