@@ -24,7 +24,7 @@ A simple local file-based database module.
   ```
 
 # How to install
-1) Click [here](https://sanalzio.github.io/PyDB/PyDB.py) and download module file.
+1) Click [here](https://github.com/sanalzio/PyDB/releases/download/1.8/PyDB.py) and download module file.
 
 # Dictionary
 ## import example:
