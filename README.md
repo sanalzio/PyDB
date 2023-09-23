@@ -1,7 +1,7 @@
 # PyDB 1.9
 A simple local file-based database module.
 
-![Pydb Thumbnail](pydb.jpg)
+![Pydb Thumbnail](esiz.jpg)
 
 # Updates
 - Now You can use `pydb.getData(key)` or `pydb.key`. [Go!](https://github.com/sanalzio/PyDB/tree/main#get-data)
