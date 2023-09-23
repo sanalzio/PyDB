@@ -1,7 +1,8 @@
-# PyDB 1.8
+# PyDB 1.9
 A simple local file-based database module.
 
 # Updates
+- Now You can use `pydb.getData(key)` or `pydb.key`. [Go!](https://github.com/sanalzio/PyDB/tree/main#get-data)
 - Now, only .pydb file extensions are allowed.
   ```py
   import PyDB
@@ -59,12 +60,15 @@ varNone:{None}
 code:
 ```py
 print(db.getData("var1"))
+# Update
+print(db.var1)
 print(db.getData("varTrue"))
 print(db.getData("varFlas"))
 print(db.getData("varNone"))
 ```
 output:
 ```
+123
 123
 True
 Flase
