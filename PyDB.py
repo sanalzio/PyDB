@@ -1,6 +1,6 @@
 """# PyDB
 # A Simple Database Module"""
-__version__ = 1.8
+__version__ = 1.9
 __name__ = "pydb"
 
 class pydb:
@@ -13,6 +13,12 @@ class pydb:
     """
     def __init__(self, file:str):
         self.file=file+".pydb"
+        self.data=self.fileToDICT()
+    def __getattr__(self, name):
+        if name in self.data:
+            return self.getData(name)
+        else:
+            raise AttributeError(f"'pydb' object has no attribute '{name}'")
     def getData(self, key):
         key=str(key)
         """
