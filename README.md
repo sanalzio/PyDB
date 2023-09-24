@@ -18,6 +18,9 @@ A simple local file-based database module.
 - Added lenFile function to pylist class. [Go!](https://github.com/sanalzio/PyDB/tree/main#get-length)
 
 # Install
+1) **Download new release with [here.](https://github.com/sanalzio/PyDB/releases/download/2.0/PyDB.7z)**
+2) Extract files to folder
+
 ## First option
 **Run install.exe** If the program doesn't work properly, try running it as an administrator.
 ## Second option
@@ -40,6 +43,8 @@ A simple local file-based database module.
    ```shell
    pip install pydb-2.0-py3-none-any.whl
    ```
+## Fourth option
+Copy PyDB.py file to workspace and use.
 # pydb Class:
 ## import example:
 ```py
