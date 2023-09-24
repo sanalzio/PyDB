@@ -1,9 +1,11 @@
-# PyDB 1.9
+# PyDB 2.0
 A simple local file-based database module.
 
 ![Pydb Thumbnail](pydb.jpg)
 
 # Updates
+- **Added Convert class and convert functions. [Go!](https://github.com/sanalzio/PyDB/tree/main#convert-functions)**
+- Litle bug fixs.
 - Now You can use `pydb.getData(key)` or `pydb.key`. [Go!](https://github.com/sanalzio/PyDB/tree/main#get-data)
 - Now, only .pydb file extensions are allowed.
   ```py
@@ -12,24 +14,33 @@ A simple local file-based database module.
   ```
 - Now the module allows data with newline(\n) characters.
 - The listToTABLE and dictToTABLE functions have been redesigned from scratch.
-- Added index function to pylist class.
-  ```py
-  import PyDB
-  db=PyDB.pylist("Filename")
-  print(db.index("0120982109"))
-  print(db.index(0120982109))
-  ```
-- Added lenFile function to pylist class.
-  ```py
-  import PyDB
-  db=PyDB.pylist("Filename")
-  print(db.lenFile())
-  ```
+- Added index function to pylist class. [Go!](https://github.com/sanalzio/PyDB/tree/main#get-variable-index)
+- Added lenFile function to pylist class. [Go!](https://github.com/sanalzio/PyDB/tree/main#get-length)
 
-# How to install
-1) Click [here](https://github.com/sanalzio/PyDB/releases/download/1.8/PyDB.py) and download module file.
-
-# Dictionary
+# Install
+## First option
+**Run install.exe** If the program doesn't work properly, try running it as an administrator.
+## Second option
+1) Open power shell or cmd as administrator.
+2) Use :
+    ```shell
+    cd <setup.py directory>
+    ```
+3) Start setup.py with python:
+   ```shell
+   python setup.py
+   ```
+## Third option
+1) Open power shell or cmd as administrator.
+2) Use :
+    ```shell
+    cd <.whl file directory>
+    ```
+3) Start setup.py with python:
+   ```shell
+   pip install pydb-2.0-py3-none-any.whl
+   ```
+# pydb Class:
 ## import example:
 ```py
 import PyDB
@@ -137,7 +148,7 @@ var1:123
 var2:789
 ```
 
-## Retrieve the data in dictionary format
+## retrieve the data in dictionary format
 file content:
 ```
 var1:123
@@ -153,7 +164,7 @@ output:
 {'var1':'123', 'var2':'789'}
 ```
 
-## Dictionary to file
+## dictionary to file
 code:
 ```py
 mydict = {'var':'Hello', 'varint':123}
@@ -165,7 +176,7 @@ var:Hello
 varint:123
 ```
 
-## Control data
+## control data
 file content:
 ```
 var:Hello
@@ -181,7 +192,7 @@ True
 False
 ```
 
-## Get datas
+## get datas
 file content:
 ```
 var:Hello
@@ -200,11 +211,11 @@ output:
 (("var", "Hello"), ("varint", "123"))
 ```
 
-# List
+# pylist Class
 ## import example:
 ```py
 import PyDB
-db=PyDB.pydb("File.x")
+db=PyDB.pydb("FileName")
 ```
 
 ## add data
@@ -305,7 +316,37 @@ new content:
 789
 ```
 
-## Retrieve the data in list format
+## get length
+db.pydb file content:
+```
+123
+456
+```
+code:
+```py
+print(db.lenFile())
+```
+output: 
+```
+2
+```
+
+## get variable index
+db.pydb file content:
+```
+123
+456
+```
+code:
+```py
+print(db.index("123"))
+```
+output:
+```
+0
+```
+
+## retrieve the data in list format
 file content:
 ```
 Hello
@@ -321,7 +362,7 @@ output:
 ["Hello", "123"]
 ```
 
-## List to file
+## list to file
 code:
 ```py
 mylist = ["Hello", "I'm fine thank you"]
@@ -332,8 +373,65 @@ new file content:
 Hello
 I'm fine thank you
 ```
+# convert Functions
+## .csv to .pydb file
+database.csv file content:
+```csv
+keys,variables
+key1,var1
+key2,var2
+```
+Code:
+```py
+import PyDB
+dbfile=PyDB.convert.csv_to_pydb("datavase.csv", "database")
+db=PyDB.pydb(dbfile)
+print(dbfile.key1)
+```
+Output:
+```
+var1
+```
+## .json to .pydb file
+### Dictionary
+database.json file content:
+```json
+{
+    "key1": "var1",
+    "key2": "var2"
+}
+```
+Code:
+```py
+import PyDB
+dbfile=PyDB.convert.json_to_pydb("datavase.json","database")
+db=PyDB.pydb(dbfile)
+print(dbfile.key1)
+```
+Output:
+```
+var1
+```
+### List
+database.json file content:
+```json
+[
+    "var1",
+    "var2"
+]
+```
+Code:
+```py
+import PyDB
+dbfile=PyDB.convert.json_to_pydb("datavase.json","database")
+db=PyDB.pylist(dbfile)
+print(dbfile.getData(0), dbfile.getData(1))
+```
+Output:
+```
+var1 var2
+```
 # Other Functions
-
 ## dictToTABLE
 Code:
 ```py
