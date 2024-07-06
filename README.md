@@ -14,4 +14,4 @@ pip install s-pydb
 ```
 
 # Documentation
-### [-> Click to go PyDB documentation <-](https://sanalzio.github.io/PyDB/)
+### [-> Click to go PyDB documentation <-](https://sanalzio.github.io/Simple-PyDB/)
